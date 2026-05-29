@@ -1,0 +1,83 @@
+{
+  "name": "Rakshika",
+  "short_name": "Rakshika",
+  "description": "Female Protector and Guardian - Advanced Passive Protection, Cyber Safety, Evidence Vault, and Emergency Support System.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "categories": [
+    "productivity",
+    "utilities",
+    "social"
+  ],
+  "shortcuts": [
+    {
+      "name": "Instant Passive SOS",
+      "short_name": "SOS",
+      "description": "Activate immediate silent ambient safety monitoring and trigger alerts",
+      "url": "/?trigger=sos",
+      "icons": [
+        {
+          "src": "/icons/icon-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Secure Evidence Vault",
+      "short_name": "Vault",
+      "description": "Access tamper-proof localized encrypted incident records",
+      "url": "/evidence",
+      "icons": [
+        {
+          "src": "/icons/icon-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Cyber Safety Scanning",
+      "short_name": "Cyber",
+      "description": "Report image morphing, deepfakes, or digital harassment indicators",
+      "url": "/cyber",
+      "icons": [
+        {
+          "src": "/icons/icon-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "prefer_related_applications": false
+}
