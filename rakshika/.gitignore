@@ -22,3 +22,14 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Environment Variables
+.env
+
+# Firebase Cache
+.firebase/
+
+# Android / Bubblewrap Build Artifacts & Security
+android.keystore
+*.apk
+*.aab
