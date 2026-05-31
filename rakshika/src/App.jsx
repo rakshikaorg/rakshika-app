@@ -1,12 +1,60 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import { getAuth, onAuthStateChanged } from 'firebase/auth'
+
+// New Architecture: Route Management Integration
+import AppRoutes from './routes/AppRoutes.jsx'
+
+// Strictly Preserved Existing Imports
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 
 function App() {
+  // Strictly Preserved Existing State
   const [count, setCount] = useState(0)
 
+  // Real Rakshika System State Logic
+  const [user, setUser] = useState(null)
+  const [authResolved, setAuthResolved] = useState(false)
+  const [showLegacyBoilerplate, setShowLegacyBoilerplate] = useState(false)
+
+  // System Hook: Real-time Firebase Authentication Gate
+  useEffect(() => {
+    try {
+      const auth = getAuth();
+      const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+        setUser(currentUser);
+        setAuthResolved(true);
+      });
+      return () => unsubscribe();
+    } catch (error) {
+      console.error("Firebase Auth not initialized. Ensure firebase.js is configured.", error);
+      setAuthResolved(true);
+    }
+  }, [])
+
+  // Security Gate Loading State
+  if (!authResolved) {
+    return (
+      <div className="h-screen w-full bg-dark flex flex-col items-center justify-center text-safe">
+        <div className="w-12 h-12 border-4 border-safe border-t-transparent rounded-full animate-spin"></div>
+        <p className="mt-4 font-sans text-sm tracking-widest uppercase">Initializing Security Layer...</p>
+      </div>
+    )
+  }
+
+  // Real Application Router Mount
+  if (!showLegacyBoilerplate) {
+    return (
+      <BrowserRouter>
+        <AppRoutes user={user} />
+      </BrowserRouter>
+    )
+  }
+
+  // Strictly Preserved Existing Code Block
   return (
     <>
       <section id="center">
